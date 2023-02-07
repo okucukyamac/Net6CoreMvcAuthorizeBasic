@@ -5,7 +5,7 @@ using System.Diagnostics;
 
 namespace Net6CoreMvcAuthorize.Controllers
 {
-    [Authorize(Roles = "i")]
+    [Authorize(Roles = "admin")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -29,6 +29,11 @@ namespace Net6CoreMvcAuthorize.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public IActionResult Error1()
+        {
+            return View();
         }
     }
 }

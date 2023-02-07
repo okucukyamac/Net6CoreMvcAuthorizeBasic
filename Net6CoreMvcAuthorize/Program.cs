@@ -22,6 +22,9 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+//domain içinde olmayan bir link girildiðinde gidilecek sayfa.
+app.UseStatusCodePagesWithReExecute("/Home/Error1", "?code={0}");
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
